@@ -1,0 +1,95 @@
+﻿@model IEnumerable<WorkShop.Models.User>
+
+@{
+    ViewData["Title"] = "Пользователи";
+}
+
+<br/>
+<h1>Пользователи</h1>
+<br/>
+<br/>
+
+<p>
+    <a asp-action="Create">Добавить нового</a>
+</p>
+
+<h2>Клиенты</h2>
+
+<table class="table table-hover">
+    <thead>
+        <tr class="table-dark">
+            <td>ФИО</td>
+            <td>Email</td>
+            <td>Дополнительно</td>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model)
+{
+            @if (item.Role == "Клиент")
+            {
+                <tr class="table-default")">
+                    <td>
+                        @item.FIO
+                    </td>
+                    <td>
+                        @item.Email
+                    </td>
+                    <td>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                                        <a asp-action="Edit" asp-route-id="@item.ID" class="btn btn-outline-warning text-warning">Изменить</a>
+                            </li>
+                        <li class="breadcrumb-item">
+                                                        <a asp-action="Details" asp-route-id="@item.ID" class="btn btn-outline-info text-info">Подробнее</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                                                        <a asp-action="Delete" asp-route-id="@item.ID" class="btn btn-outline-danger text-danger">Удалить</a>
+                        </li>
+                    </ol>
+                    </td>
+                </tr>
+                }
+            }
+    </tbody>
+</table>
+<br/>
+<h2>Админы</h2>
+<table class="table table-hover">
+    <thead>
+        <tr class="table-dark">
+            <td>ФИО</td>
+            <td>Email</td>
+            <td>Дополнительно</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            @if (item.Role == "Админ")
+            {
+                <tr class="table-default")">
+                    <td>
+                        @item.FIO
+                        </td>
+                    <td>
+                        @item.Email
+                    </td>
+                    <td>
+                                        <ol class="breadcrumb">
+                                         <li class="breadcrumb-item">
+                                                <a asp-action="Edit" asp-route-id="@item.ID" class="btn btn-outline-warning text-warning">Изменить</a>
+                                    </li>
+                                <li class="breadcrumb-item">
+                                                                <a asp-action="Details" asp-route-id="@item.ID" class="btn btn-outline-info text-info">Подробнее</a>
+                                </li>
+                                <li class="breadcrumb-item">
+                                                                <a asp-action="Delete" asp-route-id="@item.ID" class="btn btn-outline-danger text-danger">Удалить</a>
+                                </li>
+                            </ol>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
