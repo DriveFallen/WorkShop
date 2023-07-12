@@ -1,0 +1,78 @@
+body {
+    background-color: rgb(0, 0, 0, 0.8);
+}
+
+.calc {
+    margin: 3vmin auto;
+    width: 60vmin;
+    height: 85vmin;
+    border: 0.3vmin solid rgb(74, 211, 231);
+    border-radius: 4vmin;
+    background-color: rgb(27, 9, 52);
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+    padding: 1.5vmin;
+}
+
+.calc-screen {
+    display: grid;
+    justify-items: end;
+    background-color: rgb(56, 22, 104);
+    padding: 2vmin;
+    border-radius: 10vmin;
+    height: 10vmin;
+    margin-bottom: 1vmin;
+}
+
+.result {
+    width: auto;
+    height: auto;
+    margin-top: 0.5vmin;
+    font-size: 6vmin;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.buttons {
+    display: grid;
+    grid-gap: 1vmin;
+    justify-items: center;
+    grid-template-areas: "C Back percent division" "one two three multi" "four five six minus" "seven eigth nine plus" "dot zero equal equal"
+}
+
+.btn {
+    width: 13vmin;
+    height: 13vmin;
+    background-color: rgb(112, 66, 192);
+    border-radius: 50%;
+    text-align: center;
+    line-height: 13vmin;
+    font-size: 4vmin;
+    cursor: pointer;
+    user-select: none;
+}
+
+.btn.equal {
+    background-color: rgb(46, 162, 110);
+    grid-area: equal;
+    width: 100%;
+    border-radius: 10vmin;
+}
+
+.btn:hover {
+    filter: brightness(140%);
+}
+
+.btn:active {
+    color: black;
+    filter: brightness(90%);
+    scale: 0.85;
+}
+
+.bg-grey {
+    background-color: rgb(33, 162, 242);
+}
+
+.bg-orange {
+    background-color: rgb(225, 66, 181);
+}
